@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manual de Referencia Interactivo sobre BOINC, Computación Voluntaria y los 25 Modelos de Sistemas Distribuidos con simulador en tiempo real.">
+  <title>Manual BOINC & Sistemas Distribuidos | Plataforma Interactiva</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+</head>
+<body>
+
+  <!-- Encabezado Semántico Principal -->
+  <header class="top-header">
+    <div class="brand-area">
+      <div class="brand-logo" aria-hidden="true">🌌</div>
+      <div class="brand-titles">
+        <h1>Manual BOINC & Computación Distribuida <span class="badge-tag">v1.0.0</span></h1>
+        <p>Berkeley Open Infrastructure for Network Computing & Sistemas Distribuidos</p>
+      </div>
+    </div>
+
+    <!-- Buscador global -->
+    <div class="global-search-box">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="globalSearchInput" placeholder="Buscar modelos, proyectos o conceptos..." aria-label="Buscar en el manual">
+    </div>
+
+    <!-- Navegación por pestañas -->
+    <nav class="nav-tabs" aria-label="Navegación del manual">
+      <button class="nav-tab-btn active" data-target="panel-intro">📖 Introducción</button>
+      <button class="nav-tab-btn" data-target="panel-architecture">🏛️ Arquitectura</button>
+      <button class="nav-tab-btn" data-target="panel-simulator">⚡ Simulador Clúster</button>
+      <button class="nav-tab-btn" data-target="panel-atlas">🗺️ Atlas 25 Modelos</button>
+      <button class="nav-tab-btn" data-target="panel-projects">🤝 Proyectos & Dijkstra</button>
+      <button class="nav-tab-btn" data-target="panel-quantum">🪐 Cuántica Híbrida</button>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal Semántico -->
+  <main class="main-wrapper">
+
+    <!-- Panel 1: Introducción y Fundamentos -->
+    <section id="panel-intro" class="view-panel active">
+      <div class="glass-card">
+        <div class="card-header-styled">
+          <h2>🌌 ¿Qué es BOINC y la Computación Voluntaria?</h2>
+          <span class="badge-tag">Fundamento Científico</span>
+        </div>
+        <div class="grid-2">
+          <div>
+            <p><strong>BOINC (Berkeley Open Infrastructure for Network Computing)</strong> es la plataforma de código abierto de referencia mundial para la <em>computación voluntaria distribuida</em>, desarrollada originalmente en la Universidad de California en Berkeley bajo el liderazgo del Dr. David Anderson.</p>
+            <br>
+            <p>Permite a investigadores de astrofísica, biología molecular, climatología y matemáticas agrupar la potencia informática inactiva de cientos de miles de computadoras personales, servidores universitarios y tarjetas gráficas (GPUs) donadas por ciudadanos de todo el planeta, alcanzando de manera colaborativa rendimientos en el orden de los <strong>PetaFLOPS</strong> y <strong>ExaFLOPS</strong> sin los costes astronómicos de un supercomputador centralizado.</p>
+          </div>
+          <div style="background: var(--bg-secondary); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-primary);">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--accent-amber);">💡 Principios Clave del Ecosistema</h3>
+            <ul style="padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+              <li><strong>Computación en Segundo Plano:</strong> Ejecución desatendida cuando el equipo entra en reposo o detecta ciclos de CPU ociosa.</li>
+              <li><strong>Desacoplamiento Estricto:</strong> Arquitectura <em>Shared-Nothing</em>; los nodos no dependen de memoria común.</li>
+              <li><strong>Tolerancia Bizantina:</strong> Validación de resultados mediante redundancia homogénea y quórum de concordancia estricto.</li>
+              <li><strong>Sistema de Créditos Cobblestone:</strong> Homologación objetiva del trabajo computacional donado independientemente de la CPU o GPU utilizada.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Métricas del Portafolio de Cómputo -->
+      <div class="grid-4">
+        <div class="metric-box">
+          <div class="metric-icon">🚀</div>
+          <div class="metric-data">
+            <h4>Pico Histórico Global</h4>
+            <div class="metric-value">> 2.4 ExaFLOPS</div>
+          </div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-icon amber">💎</div>
+          <div class="metric-data">
+            <h4>Unidad de Crédito</h4>
+            <div class="metric-value">Cobblestones</div>
+          </div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-icon green">🌍</div>
+          <div class="metric-data">
+            <h4>Voluntarios Históricos</h4>
+            <div class="metric-value">+6.5 Millones</div>
+          </div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-icon">🧩</div>
+          <div class="metric-data">
+            <h4>Modelos Distribuidos</h4>
+            <div class="metric-value">25 Paradigmas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Rápido Inicial -->
+      <div class="glass-card" style="margin-top: 1.5rem;">
+        <div class="card-header-styled">
+          <h2>🎯 Autoevaluación Interactiva de Conceptos</h2>
+          <span class="badge-tag">Quiz Rápido</span>
+        </div>
+        <div id="interactiveQuiz" class="quiz-container">
+          <!-- Inyectado dinámicamente por app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 2: Arquitectura del Ciclo de Vida BOINC -->
+    <section id="panel-architecture" class="view-panel">
+      <div class="glass-card">
+        <div class="card-header-styled">
+          <h2>🏛️ Arquitectura Cliente-Servidor y Ciclo de Vida de una Workunit</h2>
+          <span class="badge-tag">Mecanismo Interno</span>
+        </div>
+        <p style="margin-bottom: 1.25rem;">El procesamiento en BOINC se divide en dos grandes dominios: el servidor central del proyecto de investigación y los clientes heterogéneos dispersos por el mundo.</p>
+
+        <div class="grid-3">
+          <div class="model-card">
+            <div class="model-card-top">
+              <span class="model-icon">📡</span>
+              <span class="model-cat-badge">Servidor</span>
+            </div>
+            <h3>1. Work Generator & Transitioner</h3>
+            <p>El científico descompone el problema en miles de porciones discretas denominadas <strong>Workunits (WU)</strong>. El <em>Transitioner</em> orquesta el ciclo de vida de cada tarea en la base de datos relacional (MySQL/SQLite).</p>
+          </div>
+
+          <div class="model-card">
+            <div class="model-card-top">
+              <span class="model-icon">🔄</span>
+              <span class="model-cat-badge">Distribución</span>
+            </div>
+            <h3>2. Scheduler HTTP/RPC & File Server</h3>
+            <p>El cliente consulta periódicamente al <em>Scheduler</em> solicitando trabajo disponible adaptado a su hardware (RAM disponible, aceleración CUDA/OpenCL, arquitectura x86 o ARM). Los archivos pesados de entrada se descargan vía HTTP/HTTPS.</p>
+          </div>
+
+          <div class="model-card">
+            <div class="model-card-top">
+              <span class="model-icon">💻</span>
+              <span class="model-cat-badge">Cliente</span>
+            </div>
+            <h3>3. Core Client & Science App</h3>
+            <p>El <em>Core Client</em> gestiona prioridades, cuotas de red y cuida que la aplicación científica (ej. Rosetta C++ o Folding CUDA) compute en baja prioridad de CPU para no ralentizar el uso del voluntario.</p>
+          </div>
+
+          <div class="model-card">
+            <div class="model-card-top">
+              <span class="model-icon">⚖️</span>
+              <span class="model-cat-badge">Validación</span>
+            </div>
+            <h3>4. Quórum & Homogeneous Redundancy</h3>
+            <p>El <em>Validator</em> compara los archivos de salida devueltos por múltiples nodos independientes. Si $M$ réplicas coinciden en su checksum/hash, se declara resultado canónico; si hay discrepancias, se descartan los nodos disidentes.</p>
+          </div>
+
+          <div class="model-card">
+            <div class="model-card-top">
+              <span class="model-icon">📥</span>
+              <span class="model-cat-badge">Asimilación</span>
+            </div>
+            <h3>5. Assimilator & Credit System</h3>
+            <p>El <em>Assimilator</em> toma los resultados canónicos validados y los inserta en el pipeline científico final. Simultáneamente se acreditan los <strong>Cobblestones</strong> correspondientes en la cuenta del usuario.</p>
+          </div>
+
+          <div class="model-card">
+            <div class="model-card-top">
+              <span class="model-icon">🛡️</span>
+              <span class="model-cat-badge">Seguridad</span>
+            </div>
+            <h3>6. Firma Digital & Sandboxing</h3>
+            <p>Todos los binarios científicos descargados están firmados digitalmente con criptografía asimétrica por la universidad propietaria del proyecto, impidiendo la inyección de malware.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 3: Simulador de Clúster y Calculadora de Cobblestones -->
+    <section id="panel-simulator" class="view-panel">
+      <div class="glass-card">
+        <div class="card-header-styled">
+          <h2>⚡ Simulador de Clúster Heterogéneo y Validación por Quórum</h2>
+          <div style="display:flex;gap:0.5rem;align-items:center;">
+            <select id="projectSelector" class="global-search-box input" style="padding:0.4rem 0.8rem;background:var(--bg-secondary);border:1px solid var(--border-color);color:#fff;border-radius:var(--radius-sm);font-family:inherit;">
+              <option value="SETI@home">SETI@home (Astrofísica)</option>
+              <option value="Rosetta@home">Rosetta@home (Biología)</option>
+              <option value="Einstein@home">Einstein@home (Ondas Grav.)</option>
+              <option value="World Community Grid">WCG OpenPandemics</option>
+            </select>
+            <button id="btnDispatchWU" class="btn-primary">🚀 Despachar Workunit</button>
+            <button id="btnAddNode" class="btn-secondary">➕ Añadir Nodo</button>
+            <button id="btnResetCluster" class="btn-secondary">🔄 Reset</button>
+          </div>
+        </div>
+
+        <div class="simulator-container">
+          <!-- Lienzo Gráfico 2D -->
+          <div class="canvas-wrapper">
+            <canvas id="simulatorCanvas"></canvas>
+          </div>
+
+          <!-- Métricas del Simulador en Vivo -->
+          <div class="grid-4" style="margin-top: 0.5rem;">
+            <div class="metric-box">
+              <div class="metric-icon">⚡</div>
+              <div class="metric-data">
+                <h4>Capacidad Total Clúster</h4>
+                <div class="metric-value"><span id="statGigaflops">0</span> <small style="font-size:0.75rem;">GFLOPS</small></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-icon amber">💎</div>
+              <div class="metric-data">
+                <h4>Créditos Cobblestones</h4>
+                <div class="metric-value" id="statCobblestones">0</div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-icon green">✅</div>
+              <div class="metric-data">
+                <h4>WUs en Quórum</h4>
+                <div class="metric-value" id="statCompleted">0</div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-icon" style="background:hsla(354,70%,54%,0.15);color:var(--danger);">⚠️</div>
+              <div class="metric-data">
+                <h4>Nodos Bizantinos Detectados</h4>
+                <div class="metric-value" id="statByzantine" style="color:var(--danger);">0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consola Terminal del Scheduler -->
+          <div style="margin-top: 0.75rem;">
+            <h3 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; letter-spacing: 0.05em;">Consola de Eventos del Servidor (Scheduler RPC / Validation Log)</h3>
+            <div id="simTerminal" class="sim-terminal">
+              <div class="terminal-line">[INIT] Motor BOINC en línea. Topología heterogénea lista para recibir tareas científicas.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leyes de Escalamiento Matemático y Persistencia SQLite -->
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="card-header-styled">
+            <h2>📐 Leyes de Escalamiento Paralelo</h2>
+            <span class="badge-tag">Amdahl vs Gustafson</span>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1rem;">Analiza los límites teóricos del paralelismo en arquitecturas masivas al aumentar los núcleos ($N$) y la fracción paralelizable ($P$):</p>
+          
+          <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.85rem;">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem;">
+                <span>Fracción Paralela ($P$):</span>
+                <strong id="amdahlValP" style="color:var(--accent-primary);">90%</strong>
+              </div>
+              <input type="range" id="amdahlParallel" min="0.1" max="0.99" step="0.01" value="0.9" style="width:100%;">
+            </div>
+
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem;">
+                <span>Número de Nodos / Cores ($N$):</span>
+                <strong id="amdahlValN" style="color:var(--accent-amber);">16 Cores</strong>
+              </div>
+              <input type="range" id="amdahlCores" min="1" max="256" step="1" value="16" style="width:100%;">
+            </div>
+
+            <div class="grid-2" style="margin-top:0.75rem;">
+              <div style="background:var(--bg-secondary);padding:0.85rem;border-radius:var(--radius-sm);text-align:center;">
+                <div style="font-size:0.75rem;color:var(--text-muted);">Ley de Amdahl (Carga Fija)</div>
+                <div id="amdahlResult" style="font-size:1.4rem;font-weight:700;color:var(--accent-primary);">--</div>
+              </div>
+              <div style="background:var(--bg-secondary);padding:0.85rem;border-radius:var(--radius-sm);text-align:center;">
+                <div style="font-size:0.75rem;color:var(--text-muted);">Ley de Gustafson (Carga Escalable)</div>
+                <div id="gustafsonResult" style="font-size:1.4rem;font-weight:700;color:var(--accent-amber);">--</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-header-styled">
+            <h2>🗄️ Persistencia Relacional SQLite</h2>
+            <button id="btnExportSQL" class="btn-amber" style="padding:0.35rem 0.8rem;font-size:0.75rem;">💾 Exportar .SQL</button>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.8rem;">Registro de ejecuciones persistidas en la base local (tabla <code>workunit_runs</code>):</p>
+          <div style="max-height: 220px; overflow-y: auto;">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Workunit</th>
+                  <th>Proyecto</th>
+                  <th>Quórum</th>
+                  <th>Créditos</th>
+                  <th>Tiempo</th>
+                </tr>
+              </thead>
+              <tbody id="runsHistoryBody">
+                <!-- Inyectado por app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 4: Atlas de los 25 Modelos de Computación Distribuida -->
+    <section id="panel-atlas" class="view-panel">
+      <div class="glass-card">
+        <div class="card-header-styled">
+          <h2>🗺️ Atlas Exhaustivo de los 25 Modelos de Computación Distribuida</h2>
+          <div style="display:flex;gap:0.75rem;align-items:center;">
+            <select id="modelCategoryFilter" class="global-search-box input" style="padding:0.4rem 0.8rem;background:var(--bg-secondary);border:1px solid var(--border-color);color:#fff;border-radius:var(--radius-sm);font-family:inherit;">
+              <!-- Rellenado por app.js -->
+            </select>
+          </div>
+        </div>
+        <p style="color:var(--text-secondary);font-size:0.88rem;margin-bottom:1.25rem;">Compendio formal de las arquitecturas, modelos de programación, paradigmas de consenso y marcos de verificación que fundamentan las redes de cómputo a gran escala:</p>
+
+        <div id="atlasGrid" class="grid-3">
+          <!-- Inyectado dinámicamente por app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 5: Proyectos Voluntarios y Condecoraciones Dijkstra -->
+    <section id="panel-projects" class="view-panel">
+      <div class="glass-card">
+        <div class="card-header-styled">
+          <h2>🤝 Proyectos Científicos de Computación Voluntaria</h2>
+          <span class="badge-tag">Catálogo Histórico</span>
+        </div>
+        <p style="color:var(--text-secondary);font-size:0.88rem;margin-bottom:1rem;">Grandes iniciativas científicas globales que han impulsado descubrimientos biomédicos y astronómicos mediante la donación ciudadana:</p>
+        <div style="overflow-x:auto;">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Proyecto & Entidad</th>
+                <th>Área Científica</th>
+                <th>Estado</th>
+                <th>Objetivo de Cómputo</th>
+                <th>Hardware Idóneo</th>
+              </tr>
+            </thead>
+            <tbody id="projectsTableBody">
+              <!-- Inyectado dinámicamente por app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="card-header-styled">
+          <h2>🏆 Premio Edsger W. Dijkstra en Computación Distribuida</h2>
+          <span class="badge-tag">Hitos PODC / DISC</span>
+        </div>
+        <p style="color:var(--text-secondary);font-size:0.88rem;margin-bottom:1rem;">Artículos seminales galardonados por su impacto duradero superior a 10 años en la ciencia de los sistemas distribuidos:</p>
+        <div id="dijkstraList">
+          <!-- Inyectado por app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 6: Frontera Clásica vs Computación Cuántica Híbrida -->
+    <section id="panel-quantum" class="view-panel">
+      <div class="glass-card">
+        <div class="card-header-styled">
+          <h2>🪐 Frontera Clásica BOINC vs. Escalado a Computación Cuántica Híbrida</h2>
+          <span class="badge-tag">Capa 4 / Límites de Cómputo</span>
+        </div>
+        <div class="grid-2">
+          <div>
+            <p>La computación voluntaria (BOINC) y los clústeres masivos clásicos son la herramienta perfecta para problemas <strong>embarazosamente paralelos (Embarrassingly Parallel)</strong> donde un espacio de búsqueda descomunal puede descomponerse en millones de tareas totalmente independientes con mínima o nula comunicación entre nodos (complejidad polinómica divisible $\mathcal{O}(N/P)$).</p>
+            <br>
+            <p>Sin embargo, cuando el problema científico involucra <strong>correlaciones cuánticas entrelazadas</strong> —como el cálculo del estado fundamental de moléculas complejas mediante VQE (Variational Quantum Eigensolver) o la simulación de materiales superconductores a alta temperatura— el espacio de Hilbert crece de forma exponencial ($\mathcal{O}(2^n)$). En este régimen, ni siquiera agregando millones de ordenadores en BOINC se puede almacenar el vector de estado cuántico.</p>
+          </div>
+          <div style="background:var(--bg-secondary);padding:1.25rem;border-radius:var(--radius-md);border-left:4px solid var(--accent-amber);">
+            <h3 style="font-size:1.05rem;color:var(--accent-amber);margin-bottom:0.5rem;">🌌 El Ecosistema Híbrido Cuántico-Clásico</h3>
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">La arquitectura moderna conecta plataformas clásicas distribuidas con Unidades de Procesamiento Cuántico (QPU):</p>
+            <ul style="font-size:0.82rem;color:var(--text-secondary);display:flex;flex-direction:column;gap:0.4rem;padding-left:1.1rem;">
+              <li><strong>BOINC / HPC Clásico:</strong> Preprocesamiento del Hamiltoniano molecular, optimización geométrica clásica y ajuste de parámetros variacionales ($\vec{\theta}$).</li>
+              <li><strong>IBM Quantum Cloud (`Qiskit Runtime` / `ibm-q/open/main`):</strong> Ejecución del circuito cuántico en QPU física con mitigación de ruido (ZNE, Twirled Readout).</li>
+              <li><strong>Google Quantum AI (`Cirq` / `qsim` / `Stim`):</strong> Simulación de circuitos estabilizadores y corrección cuántica de errores (QEC).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;background:hsla(217,33%,16%,0.7);padding:1.25rem;border-radius:var(--radius-md);border:1px solid var(--border-color);">
+          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;color:var(--accent-primary);">⚡ Calculadora de Recursos: Clásico vs. Qubits</h3>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1rem;">Compara cuánta memoria RAM clásica se requeriría para simular un estado cuántico arbitrario de $N$ qubits frente a una QPU nativa:</p>
+          <div class="grid-3" style="text-align:center;">
+            <div style="background:var(--bg-primary);padding:1rem;border-radius:var(--radius-sm);border:1px solid var(--border-color);">
+              <div style="font-size:0.8rem;color:var(--text-muted);">Qubits ($N = 30$)</div>
+              <div style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin:0.25rem 0;">16 Gigabytes</div>
+              <div style="font-size:0.75rem;color:var(--success);">Alcanzable en 1 PC BOINC</div>
+            </div>
+            <div style="background:var(--bg-primary);padding:1rem;border-radius:var(--radius-sm);border:1px solid var(--border-color);">
+              <div style="font-size:0.8rem;color:var(--text-muted);">Qubits ($N = 50$)</div>
+              <div style="font-size:1.3rem;font-weight:700;color:var(--warning);margin:0.25rem 0;">16 Petabytes</div>
+              <div style="font-size:0.75rem;color:var(--warning);">Supercomputador Summit / Red BOINC</div>
+            </div>
+            <div style="background:var(--bg-primary);padding:1rem;border-radius:var(--radius-sm);border:1px solid var(--border-color);">
+              <div style="font-size:0.8rem;color:var(--text-muted);">Qubits ($N = 70$)</div>
+              <div style="font-size:1.3rem;font-weight:700;color:var(--danger);margin:0.25rem 0;">16 Zettabytes</div>
+              <div style="font-size:0.75rem;color:var(--danger);">Inabordable para toda la Tierra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer>
+    <div>
+      <strong>Manual-BOINC</strong> — Computación Voluntaria y Sistemas Distribuidos | Portafolio Codex
+    </div>
+    <div style="display:flex;gap:1.5rem;">
+      <span>Licencia: CC BY 4.0 / MIT</span>
+      <span>Stack: HTML5 / HSL CSS3 / ES2024 / SQLite</span>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
